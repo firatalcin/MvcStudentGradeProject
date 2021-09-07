@@ -1,0 +1,27 @@
+﻿@using MvcStudentGrade.Models.EntityFramework
+@model List<TBLKULUPLER>
+@{
+    ViewBag.Title = "KulupListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>Kulüp Listesi</h3>
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>Kulüp Id</th>
+        <th>Kulüp Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.KULUPID</td>
+            <td>@x.KULUPAD</td>
+            <td><a href="/Kulupler/KulupSil/@x.KULUPID" class="btn btn-danger">Sil</a>
+            <a href="/Kulupler/KulupGetir/@x.KULUPID" class="btn btn-success">Guncelle</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Kulupler/YeniKulup" class="btn btn-primary">Yeni Kulüp Ekle</a>
+

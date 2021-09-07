@@ -1,0 +1,35 @@
+﻿@using MvcStudentGrade.Models.EntityFramework
+@model List<TBLOGRENCILER>
+@{
+    ViewBag.Title = "OgrenciListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Öğrenci Listesi</h3>
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>Öğrenci Id</th>
+        <th>Öğrenci Adı</th>
+        <th>Öğrenci Soyadı</th>
+        <th>Öğrenci Kulüp</th>
+        <th>Öğrenci Cinsiyet</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.OGID</td>
+            <td>@x.OGRADI</td>
+            <td>@x.OGRSOYAD</td>
+            <td>@x.OGRKULUP</td>
+            <td>@x.OGRCINSIYET</td>
+            <td>
+                <a href="/Ogrenciler/OgrenciSil/@x.OGID" class="btn btn-danger">Sil</a>
+                <a href="/Ogrenciler/OgrenciGetir/@x.OGID" class="btn btn-success">Guncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Ogrenciler/YeniOgrenci" class="btn btn-primary">Yeni Öğrenci Ekle</a>
+

@@ -1,0 +1,44 @@
+﻿@using MvcStudentGrade.Models.EntityFramework
+@model List<TBLNOTLAR>
+@{
+    ViewBag.Title = "NotListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Öğrenci Listesi</h3>
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>Not Id</th>
+        <th>Ders</th>
+        <th>Öğrenci</th>
+        <th>Sınav 1</th>
+        <th>Sınav 2</th>
+        <th>Sınav 3</th>
+        <th>Proje</th>
+        <th>Ortalama</th>
+        <th>Durum</th>
+        <th>İşlemler</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.NOTID</td>
+            <td>@x.TBLDERSLER.DERSAD</td>
+            <td>@x.TBLOGRENCILER.OGRADI @x.TBLOGRENCILER.OGRSOYAD</td>
+            <td>@x.SINAV1</td>
+            <td>@x.SINAV2</td>
+            <td>@x.SINAV3</td>
+            <td>@x.PROJE</td>
+            <td>@x.ORTALAMA</td>
+            <td>@x.DURUM</td>
+            <td>
+                <a href="/Notlar/NotSil/@x.NOTID" class="btn btn-danger">Sil</a>
+                <a href="/Notlar/NotGetir/@x.NOTID" class="btn btn-success">Guncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Notlar/YeniNot" class="btn btn-primary">Yeni Sınav Girişi</a>
+

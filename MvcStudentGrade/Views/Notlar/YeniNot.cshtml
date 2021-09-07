@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "YeniNot";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Not Giriş Sayfası</h2>
+<br />
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Id</label>
+        <input type="text" class="form-control" name="OGRID" />
+        <br />
+        <label>Ders Adı</label>
+        <input type="text" class="form-control" name="DERSID" />
+        <br />
+        <label>Sınav 1</label>
+        <input type="text" class="form-control" name="SINAV1" />
+        <br />
+        <label>Sınav 2</label>
+        <input type="text" class="form-control" name="SINAV2" />
+        <br />
+        <label>Sınav 3</label>
+        <input type="text" class="form-control" name="SINAV3" />
+        <br />
+        <label>Proje</label>
+        <input type="text" class="form-control" name="PROJE" />
+        <br />
+        <label>Ortalama</label>
+        <input type="text" class="form-control" name="ORTALAMA" />
+        <br />
+        <label>Durum</label>
+        <input type="text" class="form-control" name="DURUM" />
+        <br />
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-info">Sınav Ekle</button>
+    </div>
+</form>
